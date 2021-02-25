@@ -13,54 +13,92 @@
         <!-- Header content with avatar and basic info -->
       </header>
       <section>
-        <h2>My Coding Activity & Stats</h2>
+        <h2>My Carrier Overview</h2>
 
         <!-- Summary widget -->
         <codersrank-summary
           username="exphoenee"
-          show-header="false"
+          badges="3"
+          show-header="true"
+          show-avatar="true"
+          branding="false"
         ></codersrank-summary>
+      </section>
 
+      <section>
+        <h2>The Activity Chart</h2>
         <!-- Activity widget -->
         <codersrank-activity
           username="exphoenee"
-          legend="false"
-          labels
-          tooltip
+          legend="true"
+          labels="true"
+          tooltip="true"
           step="5"
+          weeks="52"
+          step="5"
+          branding="false"
         ></codersrank-activity>
+      </section>
 
+      <section>
+        <h2>Knowledge Gain Histoy</h2>
         <!-- Skills chart widget -->
         <codersrank-skills-chart
           username="exphoenee"
-          labels
-          tooltip
-          skills="JavaScript,CSS,Less,Vue,Svelte,TypeScript,CSS,HTML"
+          labels="true"
+          tooltip="true"
           svg-width="1120"
           svg-height="400"
+          show-other-skills="true"
+          max-labels="12"
+          branding="false"
         ></codersrank-skills-chart>
       </section>
+
+      <section>
+        <h2>Work Experience</h2>
+
+        <!-- Work experience widget -->
+        <codersrank-work-experience
+          username="exphoenee"
+          logos="true"
+          grid="true"
+          branding="false"
+        ></codersrank-work-experience>
+      </section>
+
+      <section>
+        <h2>Pproficiency</h2>
+        <!-- Education widget -->
+        <codersrank-education
+          username="exphoenee"
+          grid="true"
+          education="true"
+          certificates="true"
+          certificates-link="true"
+          branding="false"
+          education-section-title="Education"
+          certificates-section-title="Certificates"
+        ></codersrank-education>
+      </section>
+
       <section>
         <h2>Recent Projects</h2>
 
         <!-- Portfolio widget -->
         <codersrank-portfolio
           username="exphoenee"
-          grid
-          company="false"
+          grid="true"
+          logos="true"
+          dates="true"
+          title="true"
+          description="true"
+          company="true"
+          skills="true"
+          links="true"
+          company="true"
+          branding="false"
         ></codersrank-portfolio>
-      </section>
-      <section>
-        <h2>Work Experience & Education</h2>
-
-        <!-- Work experience widget -->
-        <codersrank-work-experience
-          username="exphoenee"
-          logos
-        ></codersrank-work-experience>
-
-        <!-- Education widget -->
-        <codersrank-education username="exphoenee"></codersrank-education>
       </section>
 
       <footer>

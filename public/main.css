@@ -12,8 +12,8 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  background: #000;
-  color: #fff;
+  background: #222;
+  color: #ededed;
 }
 a {
   color: var(--theme-color);
@@ -29,6 +29,8 @@ h2 {
 }
 
 main {
+  background: #111;
+  border-radius: 10px;
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 40px;
@@ -128,7 +130,10 @@ codersrank-summary {
   --badge-icon-size: 32px;
   --badge-border: 1px solid rgba(0, 0, 0, 0.1);
   --badge-box-shadow: none;
+  --header-bg-color: transparent;
+  --header-text-color: #eee;
 }
+
 .activity-widget {
   padding: 8px;
   border-radius: 8px;
@@ -165,6 +170,13 @@ codersrank-education {
   --item-padding: 16px;
   --logo-size: 64px;
   --tag-bg-color: rgba(255, 255, 255, 0.075);
+}
+
+codersrank-work-experience {
+  --grid-columns: 2;
+}
+codersrank-education {
+  --grid-columns: 2;
 }
 codersrank-portfolio {
   --grid-columns: 2;
