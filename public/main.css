@@ -1,12 +1,30 @@
 :root {
   --theme-color: #ff6033;
   --theme-color-rgb: 255, 96, 51;
+  --pagebg: #181818;
+
+  --headerbg: #222;
+  --cvgb: #cccccc;
+
+  --textinheader: #ff8533;
+  --titlecolor: #db5a0d;
+
+  --maintextcolor: #222;
+  --paragraphscolor: #111;
+
+  --border-section: #aeaeae;
+  --contac-details: #342;
+  --contac-details-list: #444;
+  --skills-colors: #444;
+  --tooltipbg: #e8ded4;
+  --shadow: grey;
 }
 html,
 body {
   position: relative;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 body {
   font-size: 16px;
@@ -275,4 +293,40 @@ header {
 }
 span.orange {
   color: #ff6033;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--headerbg);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--headerbg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--textinheader);
+  background-image: -webkit-linear-gradient(
+    45deg,
+    var(--titlecolor) 10%,
+    transparent 10%,
+    transparent 20%,
+    var(--titlecolor) 20%,
+    var(--titlecolor) 30%,
+    transparent 30%,
+    transparent 40%,
+    var(--titlecolor) 40%,
+    var(--titlecolor) 50%,
+    transparent 50%,
+    transparent 60%,
+    var(--titlecolor) 60%,
+    var(--titlecolor) 70%,
+    transparent 70%,
+    transparent 80%,
+    var(--titlecolor) 80%,
+    var(--titlecolor) 90%,
+    transparent 90%,
+    transparent
+  );
 }
