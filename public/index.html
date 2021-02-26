@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Viktor Bozzay - Fullstack Developer</title>
+    <title>Viktor Bozzay - Full Stack Developer</title>
     <!-- Link our CSS stylesheet -->
     <link rel="stylesheet" href="main.min.css" />
   </head>
@@ -13,14 +13,34 @@
         <!-- Header content with avatar and basic info -->
         <div class="header-content">
           <h1>Hi, my <span class="orange">name</span> is</h1>
-          <div class="text">
-            <div class="txtBox">
-              <p>Viktor<br /><span class="orange">Bozzay</span></p>
+          <div class="decor">
+            <div class="text">
+              <div class="txtBox">
+                <p>Viktor<br /><span class="orange">Bozzay</span></p>
+              </div>
             </div>
+            <div class="ring-of-fire"></div>
+              <svg>
+                <filter id="wavy">
+                  <feTurbulence
+                    x="0"
+                    y="0"
+                    baseFrequency="0.009"
+                    numOctaves="5"
+                    seed="2"
+                  >
+                  <animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02" repeatCount="indefinite">
+                </feTurbulence>
+                <feDisplacementMap
+                  in="SourceGraphic"
+                  scale="30"
+                >
+                </filter>
+              </svg>
           </div>
           <div class="title-wrapper">
             <p class="title-text">
-              I am a <span class="orange">fullstack</span> developer.
+              I am a <span class="orange">full stack</span> developer.
             </p>
           </div>
         </div>
@@ -132,15 +152,16 @@
         box.classList.add("txtBox");
         box.classList.add("clone");
         box.innerHTML = '<p>Viktor<br><span class="orange">Bozzay</span></p>';
-        box.style.zIndex = -i;
         document.querySelector(".text").appendChild(box);
       }
 
       function niceText(e) {
+        let pos = document.querySelector(".header-content").getBoundingClientRect();
+
         let tl = gsap.timeline();
         tl.to(".txtBox", {
-          x: e.clientX / 10 - 100,
-          y: e.clientY / 10,
+          x: (e.clientX - (pos.left + pos.right) / 2) / 10,
+          y: (e.clientY - (pos.top + pos.bottom) / 2) / 10,
           opacity: 1,
           stagger: -0.000075,
           rotate: (i, target) => {
@@ -149,8 +170,20 @@
         });
       }
 
+      function moveFire(e) {
+        let pos = document.querySelector(".header-content").getBoundingClientRect();
+
+        let tl = gsap.timeline();
+        tl.to(".ring-of-fire", {
+          x: (e.clientX - (pos.left + pos.right) / 2) / 15,
+          y: (e.clientY - (pos.top + pos.bottom) / 2) / 15,
+          opacity: 1,
+        });
+      }
+
       document.querySelector("header").addEventListener("mousemove", (e) => {
         niceText(e);
+        moveFire(e)
       });
 
       document.querySelector("header").addEventListener("mouseleave", () => {
@@ -159,6 +192,13 @@
             rotate: 0,
           });
           gsap.to(".clone", {
+            rotate: 0,
+            opacity: 0,
+            duration: 1,
+            stagger: -0.000075,
+          });
+
+          gsap.to(".ring-of-fire", {
             rotate: 0,
             opacity: 0,
             duration: 1,
