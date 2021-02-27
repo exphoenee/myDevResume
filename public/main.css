@@ -341,7 +341,7 @@ span.orange {
   width: 600px;
   height: 600px;
   content: "";
-  border: 20px solid #fff;
+  border: 30px solid #fff;
   border-radius: 50%;
   box-shadow: 0 0 50px #ff6033, inset 0 0 50px #ff6033;
   -webkit-animation: fire 5s linear infinite;
